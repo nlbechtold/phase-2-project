@@ -1,18 +1,137 @@
 {
-    "Food": [
+    "foods": [
     {    
-      id: 1,
-      food: "Broccoli",
-      category: "Vegetarian",
-      grams: 5
-      serving: "1 cup"
+      "id": 1,
+      "name": "Chicken",
+      "category": "Meat",
+      "grams": 26,
+      "serving": "3 oz"
     },
     {    
         "id": 2 ,
-        food: "Chicken",
-        category: "Meat",
-        grams: 15
-        serving: "1 cup"
+        "name": "Beef",
+        "category": "Meat",
+        "grams": 21,
+        "serving": "3 oz"
       },
+      {    
+        "id": 3,
+        "name": "Pork",
+        "category": "Meat",
+        "grams": 22,
+        "serving": "3 oz"
+      },
+      {    
+        "id": 4,
+        "name": "Salmon",
+        "category": "Meat",
+        "grams": 22,
+        "serving": "3 oz"
+      },
+      {    
+        "id": 5,
+        "name": "Lamb",
+        "category": "Meat",
+        "grams": 21,
+        "serving": "3 oz"
+      },
+      {    
+        "id": 6,
+        "name": "Tuna",
+        "category": "Meat",
+        "grams": 18,
+        "serving": "3 oz"
+      },
+      {    
+        "id": 7,
+        "name": "Turkey",
+        "category": "Meat",
+        "grams": 23,
+        "serving": "3 oz"
+      },
+      {    
+        "id": 8,
+        "name": "Milk",
+        "category": "Dairy",
+        "grams": 8,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 9,
+        "name": "Cottage Cheese",
+        "category": "Dairy",
+        "grams": 14,
+        "serving": "4 oz"
+      },
+      {    
+        "id": 10,
+        "name": "Greek Yogurt",
+        "category": "Dairy",
+        "grams": 18,
+        "serving": "6 oz"
+      },
+      {    
+        "id": 11,
+        "name": "Kefir",
+        "category": "Dairy",
+        "grams": 9,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 12,
+        "name": "Mozzarella",
+        "category": "Dairy",
+        "grams": 7,
+        "serving": "1 oz"
+      },
+      {    
+        "id": 13,
+        "name": "Almonds",
+        "category": "Plant",
+        "grams": 6,
+        "serving": "1 oz"
+      },
+      {    
+        "id": 14,
+        "name": "Walnuts",
+        "category": "Plant",
+        "grams": 4,
+        "serving": "1 oz"
+      },
+      {    
+        "id": 15,
+        "name": "Pinto Beans",
+        "category": "Plant",
+        "grams": 15,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 16,
+        "name": "Black Beans",
+        "category": "Plant",
+        "grams": 15,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 17,
+        "name": "Soybeans",
+        "category": "Plant",
+        "grams": 28,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 18,
+        "name": "Quinoa",
+        "category": "Plant",
+        "grams": 8,
+        "serving": "8 oz"
+      },
+      {    
+        "id": 19,
+        "name": "Lentils",
+        "category": "Plant",
+        "grams": 17,
+        "serving": "8 oz"
+      }
 ]
-};
+}
