@@ -1,6 +1,6 @@
 import React from "react";
 // import  { foods } from "../db.json"
-// import Button from 'react-bootstrap/Button';
+import {Button} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import Accordion from 'react-bootstrap/Accordion';
@@ -10,26 +10,25 @@ import Calculator from "./Calculator";
 
 
 
+
 function Home () {
  
 return (
     <Card> 
-        <div>
-
-
-        </div>
+       
     <div>
     <ProteinPage />
-    </div>
-<div>
+        </div>
+    <div>
     <Calculator/>
-</div>
+        </div>
+    
  <Image src="https://media.istockphoto.com/id/1296030180/photo/composition-with-high-protein-food.jpg?s=612x612&w=0&k=20&c=DJDYM9qte_Mz04jh-YsjQg6va8ht_PKbMV1yhndRdvs=" fluid />
    
       <Card.Header>
         <Nav variant="tabs" defaultActiveKey="#first">
           <Nav.Item>
-            <Nav.Link href="#first">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/calculator">Protein Calculator</Nav.Link>

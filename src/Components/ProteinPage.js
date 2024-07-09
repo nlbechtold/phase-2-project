@@ -13,7 +13,24 @@ function ProteinPage() {
         .then(r=>r.json())
         .then(data=>setProteinList(data))
       },[])
-      console.log(proteinList)
+      function addProtein(newProtein){
+        console.log(newProtein)
+        fetch('http://localhost:3001/foods',{
+          method: "POST",
+          headers:{
+            "Content-Type":"application/JSON"
+          },
+          body: JSON.stringify(newProtein)
+        })
+        .then(r=>r.json())
+        .then(data=>{
+         
+          const newProteinArr = [...proteinList,data]
+          setProteinList(newProteinArr)
+          
+        })
+    
+      }
 
     // const [cat, setCat] = useState("All");
     // const newListFil = filList.filter((foods) => {
@@ -31,8 +48,8 @@ function ProteinPage() {
         <div>
         <h2>Protein List</h2>
         <ProteinListFilter  setProteinList= {setProteinList} proteinList={proteinList}/>
-        <ProteinListForm />
-        <ProteinList foods={proteinList} proteinList={proteinList} food={proteinList.name} serving={proteinList.serving} grams={proteinList.grams} />
+        <ProteinListForm addProtein={addProtein}/>
+        <ProteinList foods={proteinList} proteinList={proteinList} category={proteinList.category} food={proteinList.name} serving={proteinList.serving} grams={proteinList.grams} />
         <SelectedProteinList />
         <SelectedProteinListCalculator />
         

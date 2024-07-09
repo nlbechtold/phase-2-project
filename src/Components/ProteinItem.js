@@ -1,11 +1,15 @@
+import { Badge } from "react-bootstrap";
+import { Button }from "react-bootstrap";
 
-
-function ProteinItem({originalList, name, serving, grams}) {
+function ProteinItem({ name, category, serving, grams}) {
 
     return (
 
        <div>
-       <h1>{name} {serving} {grams}g </h1>
+       <h1> {category} {name} {serving} {grams}g </h1>
+       <Badge bg="primary" pill as={Button}>
+          add
+        </Badge>
        </div>
 
     )

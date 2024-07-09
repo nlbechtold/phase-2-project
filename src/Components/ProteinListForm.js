@@ -1,39 +1,50 @@
 import { Form, InputGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import React from "react";
 
 
-function ProteinListForm({addProtein, newProtein}) {
+
+
+function ProteinListForm({addProtein}) {
     
     return (
-        <div>
+        <div className = "ProteinListForm">
+            <h1>Enter Food</h1>
         <Form
         onSubmit={(e) => {
-            // console.log(e.target.fronturl)
+            e.preventDefault();
+         
             const newProtein = {
-            food: e.target.food.value,
+        
+            name: e.target.name.value,
             serving: e.target.serving.value,
-            grams: e.target.grams.value
+            grams: e.target.grams.value,
+            category: e.target.category.value
             }
+            console.log(newProtein)
             addProtein(newProtein)
         }}>
-        
-            <Form.Select aria-label="Default select example">
-            <option>Open this select menu</option>
-            <option value="1">All</option>
-            <option value="2">Meat</option>
-            <option value="3">Dairy</option>
-            <option value="3">Plant</option>
+           <InputGroup className="mb-3">
+             <Form.Select aria-label="Default select example">
+
+            <option value="">--Please choose an option--</option>
+            <option value ="category"name="category" >Meat</option>
+            <option value ="category"  name="category" >Dairy</option>
+            <option value ="category" name="category" >Plant</option>
       
           </Form.Select>
-            <InputGroup.Text>food item</InputGroup.Text>
-            <Form.Control aria-label="food item" placeholder= "food item" name="food"/>
-            <InputGroup.Text>serving Size</InputGroup.Text>
-            <Form.Control aria-label="serving size" placeholder= "serving size"  name= "serving" />
+          
+          
+          <InputGroup.Text>name</InputGroup.Text>
+            <Form.Control label="name" placeholder= "name"  name= "name" />
+            <InputGroup.Text>serving size</InputGroup.Text>
+            <Form.Control label="serving size" placeholder= "serving size"  name= "serving" />
             <InputGroup.Text>grams</InputGroup.Text>
-            <Form.Control aria-label="grams" placeholder= "grams" name= "grams" /> 
-             <div>
-            <Button as="input" type="reset" value="Submit" />
-            </div>
+            <Form.Control label="grams" placeholder= "grams" name= "grams" /> 
+             
+            <Button type="submit">Submit form</Button>
+           
+            </InputGroup>
 
         </Form>
         </div>
@@ -41,4 +52,7 @@ function ProteinListForm({addProtein, newProtein}) {
     )
 
 }
+           
+      
+    
 export default ProteinListForm;
