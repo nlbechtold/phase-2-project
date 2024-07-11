@@ -1,13 +1,14 @@
 import { Badge } from "react-bootstrap";
 import { Button }from "react-bootstrap";
 
-function ProteinItem({ name, category, serving, grams}) {
+function ProteinItem({ onClickAdd, categoryO, name, category, serving, grams}) {
+  
 
     return (
 
        <div>
        <h1> {category} {name} {serving} {grams}g </h1>
-       <Badge bg="primary" pill as={Button}>
+       <Badge bg="primary" category ={category} name={name} serving={serving} grams={grams} pill as={Button} onClick={(e) => {onClickAdd(e)}}>
           add
         </Badge>
        </div>
@@ -16,3 +17,6 @@ function ProteinItem({ name, category, serving, grams}) {
 
 }
 export default ProteinItem;
+
+
+

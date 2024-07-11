@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.background {
+  background-color: #cad4eb;
+}
+
+.background-calculator{
+  background-image: url(https://cdn.pixabay.com/photo/2017/06/05/15/52/calculator-2374442_640.png);
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  width: 50%;
+  height: 50%;
+  opacity: 0.6;
+  background-position: center-top;  
+  color: black;
+ 
+  
+}
+.container-calculator {
+  border-color: black;
+  /* background-color: darkgrey; */
+  color: black;
+  border: black ;
+}
+.selprotein-container {
+
+
+}
+
+#parent {
+  display: flex;
+}
+#list2 {
+  width: 600px;
+  background: lightblue;
+  border-bottom-color: black;
+  border-left-color: black;
+  border-right-color: black;
+  
+  /* Just so it's visible */
+}
+#list1 {
+  flex: 1;
+  /* Grow to rest of container */
+  background: lightgreen;
+  /* Just so it's visible */
+}

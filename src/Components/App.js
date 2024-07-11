@@ -51,7 +51,7 @@ function App() {
                     element={<Home />} /> 
                 <Route path="/calculator"
                     element={<Calculator />} /> 
-                <Route path="/proteinList"
+                <Route path="/proteinPage"
                     element={<ProteinPage />} /> 
             </Routes> 
         </BrowserRouter> 

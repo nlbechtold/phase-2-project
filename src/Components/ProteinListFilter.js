@@ -1,18 +1,23 @@
 
+import React from "react";
+import ProteinList from "./ProteinList";
 
 
-function ProteinListFilter({fil, cats}) {
-//     const buttonList = cats.array.forEach(element => {
-        
-//     });((cat) => (
-//         <button key={cat} className="btn" onClick={() => {fil(cat)}}>{cat}</button>
-//     ));
-//     return (
-//       <div className="categories">
-//         <h5>Category Filter</h5>
-//   {buttonList}
+function ProteinListFilter({proteinList}) {
+//     console.log(cat)
 
-//       </div>
-//     );
-  }
+
+//    console.log(proteinList)
+// const buttonList = proteinList.map((cat) => (
+//     <button key={cat} className="btn"> {cat}</button>
+// ));
+// return (
+//   <div className="categories">
+//     <h5>Category Filter</h5>
+//     {buttonList}
+// </div>
+//   );
+}
 export default ProteinListFilter;
+
+{/* <button key={index} className="btn" onClick={() => {fil(cat)}}>{cat}</button> */}
