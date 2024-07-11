@@ -27,7 +27,6 @@ function ProteinList ({proteinList, onClickAdd, category, protein, filList, setP
     
       }
     
-    // setProteinList(filList)
     const originalList = filList.map((protein) => 
                                                 {
 

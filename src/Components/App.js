@@ -1,16 +1,13 @@
 import React from "react";
-// import {Link, useNavigate} from 'react-router-dom'
 import Home from './Home'
-
-
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import ProteinPage from "./ProteinPage";
 import Calculator from "./Calculator";
+import {useState} from "react"
 
 
 function App() {
-
-
+  const [calcGrams, setCalcGrams] = useState(0)
       return(
     
         <BrowserRouter> 
@@ -18,11 +15,11 @@ function App() {
             <Route path="/" 
             element={ <Home/>}/>
                 <Route path="/home" 
-                    element={<Home />} /> 
+                    element={<Home setCalcGrams={setCalcGrams} calcGrams={calcGrams}/>} /> 
                 <Route path="/calculator"
-                    element={<Calculator />} /> 
+                    element={<Calculator setCalcGrams={setCalcGrams} calcGrams={calcGrams} />} /> 
                 <Route path="/proteinPage"
-                    element={<ProteinPage />} /> 
+                    element={<ProteinPage setCalcGrams={setCalcGrams} calcGrams={calcGrams}/>} /> 
             </Routes> 
         </BrowserRouter> 
         

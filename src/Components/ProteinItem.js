@@ -1,7 +1,7 @@
 import { Badge } from "react-bootstrap";
 import { Button }from "react-bootstrap";
 
-function ProteinItem({ onClickAdd, categoryO, name, category, serving, grams}) {
+function ProteinItem({ onClickAdd, name, category, serving, grams}) {
   
 
     return (

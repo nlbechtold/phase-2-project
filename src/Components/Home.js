@@ -1,5 +1,4 @@
 import React from "react";
-// import  { foods } from "../db.json"
 import {Button, Container} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
@@ -8,16 +7,16 @@ import Image from 'react-bootstrap/Image';
 import ProteinPage from "./ProteinPage";
 import Calculator from "./Calculator";
 import { useState } from "react";
-
+import SelectedProteinList from "./SelectedProteinList";
 import Collapse from "react-bootstrap/Collapse";
 
 
 
 
-function Home () {
+function Home ({setCalcGrams, calcGrams}) {
     const [isOpen, setIsOpen] = useState(false);
     const [weight, setWeight] = useState(0);
-    const [calcGrams, setCalcGrams] = useState(0)
+    // const [calcGrams, setCalcGrams] = useState(0)
 
 
 
@@ -26,7 +25,7 @@ return (
     <Card className = "background"> 
        
     <div>
-    <ProteinPage id = "parent" calcGrams = {calcGrams} />
+    <ProteinPage id = "parent" setCalcGrams = {setCalcGrams} calcGrams = {calcGrams} />
         </div>
     <div>
     <Calculator setCalcGrams = {setCalcGrams} calcGrams = {calcGrams} />

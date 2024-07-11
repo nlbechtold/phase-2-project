@@ -3,6 +3,8 @@ import React from "react"
 import SelectedProteinItem from "./SelectedProteinItem"
 import { Container } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
+
+
 function SelectedProteinList ({selectedProteinList,setSelectedProteinList, remove, calcGrams, protein}) {
 
   

@@ -3,12 +3,11 @@ import ProteinListForm from "./ProteinListForm";
 import ProteinListFilter from "./ProteinListFilter";
 import ProteinList from "./ProteinList";
 import SelectedProteinList from "./SelectedProteinList";
-import SelectedProteinListCalculator from "./SelectedProteinListCalculator";
 import { useState, useEffect } from "react";
 import React from "react";
 
 
-function ProteinPage({calcGrams}) {
+function ProteinPage({setCalcGrams, calcGrams}) {
     const [isOpen, setIsOpen] = useState(false);
   const [selectedProteinItem, setSelectedProteinItem] = useState ("")
    const [selectedProteinList, setSelectedProteinList] = useState ([]);
@@ -56,19 +55,14 @@ function ProteinPage({calcGrams}) {
         grams: parseInt(e.target.getAttribute('grams')),
         category: e.target.getAttribute('category')
         }
-        console.log(selectedProteinItem)
-        // addSelectedProtein(selectedProteinItem)
+
         const selectedProteinArr = [...selectedProteinList,selectedProteinItem]
         setSelectedProteinList(selectedProteinArr)
     
 
     }
    
-    // function remove(text) {
-    //     const newList = proteinList.filter((protein) => protein.text !== text);
-        
-    //     setProteinList(newList);
-    //     }
+ 
 
       const newListFil = proteinList.filter((protein) => {
         if (categoryO === protein.category || categoryO === "All") {
@@ -79,8 +73,7 @@ function ProteinPage({calcGrams}) {
         }
        
        });
-    //    console.log(newListFil)
-    //    console.log(proteinList)
+
    
     return(
 
@@ -93,8 +86,8 @@ function ProteinPage({calcGrams}) {
         <ProteinList filList = {newListFil}  onClickAdd={addingSelectedProtein} categoryO={categoryO} foods={proteinList} proteinList={proteinList} category={proteinList.category} food={proteinList.name} serving={proteinList.serving} grams={proteinList.grams} />
         </div>
         <div id = "list2" >
-        <SelectedProteinList calcGrams = {calcGrams} category={selectedProteinList.category} food={selectedProteinList.name} serving={selectedProteinList.serving} grams={selectedProteinList.grams} addingSelectedProtein={addingSelectedProtein} selectedProteinItem={selectedProteinItem} setSelectedProteinList={setSelectedProteinList} selectedProteinList={selectedProteinList}/>
-        <SelectedProteinListCalculator />
+        <SelectedProteinList setCalcGrams = {setCalcGrams} calcGrams= {calcGrams} category={selectedProteinList.category} food={selectedProteinList.name} serving={selectedProteinList.serving} grams={selectedProteinList.grams} addingSelectedProtein={addingSelectedProtein} selectedProteinItem={selectedProteinItem} setSelectedProteinList={setSelectedProteinList} selectedProteinList={selectedProteinList}/>
+    
         </div>
 
       </div>
@@ -105,4 +98,3 @@ function ProteinPage({calcGrams}) {
 }
 
 export default ProteinPage;
-// cateogryO = {categoryO} setCategoryO = {setCategoryO}

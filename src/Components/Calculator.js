@@ -13,25 +13,38 @@ function Calculator({setCalcGrams, calcGrams}) {
 
 const [weight, setWeight] = useState(''); 
 const [activity, setActivity] = useState('1'); 
+// const [calcGramsValue, setCalcGramsValue] = useState(0)
+
 // const [calcGrams, setCalcGrams] = useState(null); 
 const handleWeightChange = (event) => { setWeight(event.target.value); };
 const handleActivityChange = (event) => { setActivity(event.target.value); }; 
 const calculateCalcGrams = (event) => 
     { event.preventDefault(); 
-    let calcGramsValue = 0; 
     
+        let calcGramsValue = 0; 
     switch (activity) { 
-        case '1': calcGramsValue = weight * 0.5; 
+        case '1': 
+        calcGramsValue = weight * 0.5; 
+      
         break; 
-        case '2': calcGramsValue = weight * 0.7; 
+        case '2':
+             calcGramsValue = weight * 0.7; 
+             
         break; 
-        case '3': calcGramsValue = weight * 0.7; 
+        case '3': 
+            calcGramsValue = weight * 0.7; 
+            
         break; 
         default: calcGramsValue = 0;
-     } 
-     setCalcGrams(calcGramsValue); 
-    }; 
+        
+        
+    }
+    console.log(calcGramsValue)
+    setCalcGrams(calcGramsValue)
+    console.log(calcGramsValue)
     
+    }; 
+   
     return ( 
     <Card  className ="container-calculator">
     <div> 
