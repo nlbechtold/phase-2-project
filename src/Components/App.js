@@ -9,37 +9,7 @@ import Calculator from "./Calculator";
 
 
 function App() {
-// -----
-//   const navigate = useNavigate();
 
-//   const navigateToHome = () => {
-//     // use the navigate function to navigate to /new-page
-//     navigate("/home");
-//   };
-
-//   return (
-//     <button onClick={() => navigateToHome()}>
-//       Navigate Home
-//     </button>
-//   );
-// };
-// -------
-    // const navigate = useNavigate()
-    //   return(
-    //         <button onCLick={()=>navigat(/home)}> Home </button> 
-    //       )
-            
-    // const navigateToCalculator = useNavigate()
-    //     return (
-    //     <Button onCLick={()=>navigateToCalculator(“/calculator”)}> Calculator </Button> 
-    //   )
-    
-    
-    // const navigateToProteinList =useNavigate=()
-    // return(
-            
-          //   <Button onCLick={()=>navigate(“/proteinList”)}> ProteinList </Button> 
-          // )
 
       return(
     

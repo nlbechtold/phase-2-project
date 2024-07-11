@@ -5,13 +5,15 @@ import Collapse from 'react-bootstrap/Collapse';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import NavLink from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 
 
-function Calculator() { 
+function Calculator({setCalcGrams, calcGrams}) { 
 
 const [weight, setWeight] = useState(''); 
 const [activity, setActivity] = useState('1'); 
-const [calcGrams, setCalcGrams] = useState(null); 
+// const [calcGrams, setCalcGrams] = useState(null); 
 const handleWeightChange = (event) => { setWeight(event.target.value); };
 const handleActivityChange = (event) => { setActivity(event.target.value); }; 
 const calculateCalcGrams = (event) => 
@@ -31,9 +33,9 @@ const calculateCalcGrams = (event) =>
     }; 
     
     return ( 
-    <Card className ="background-calculator">
+    <Card  className ="container-calculator">
     <div> 
-    <Card.Body className ="container-calculator">
+    <Card.Body>
         <h1>Calculate Your Protein Needs!</h1> 
         <form onSubmit={calculateCalcGrams}> 
         <label> Enter Weight(lb) <input type="number" value={weight} 
@@ -57,22 +59,12 @@ const calculateCalcGrams = (event) =>
              {calcGrams !== null && ( <h2>You need {calcGrams}g of protein</h2> )} 
              <br /><br />
              <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
-             <br /><br />
+             <Nav variant="tabs" defaultActiveKey="#first">
+          <Nav.Item>
+            <Nav.Link href="/proteinPage">Protein food</Nav.Link>
+            </Nav.Item>
+            </Nav>
+          
              </Card.Body>
              </div> 
              </Card>

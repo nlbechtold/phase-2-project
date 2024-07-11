@@ -8,6 +8,7 @@ import Image from 'react-bootstrap/Image';
 import ProteinPage from "./ProteinPage";
 import Calculator from "./Calculator";
 import { useState } from "react";
+
 import Collapse from "react-bootstrap/Collapse";
 
 
@@ -25,7 +26,7 @@ return (
     <Card className = "background"> 
        
     <div>
-    <ProteinPage />
+    <ProteinPage id = "parent" calcGrams = {calcGrams} />
         </div>
     <div>
     <Calculator setCalcGrams = {setCalcGrams} calcGrams = {calcGrams} />

@@ -16,23 +16,24 @@ code {
   background-color: #cad4eb;
 }
 
-.background-calculator{
+body{
   background-image: url(https://cdn.pixabay.com/photo/2017/06/05/15/52/calculator-2374442_640.png);
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   background-size: cover;
   width: 50%;
   height: 50%;
-  opacity: 0.6;
-  background-position: center-top;  
-  color: black;
- 
+  /* opacity: 0.6; */
+  background-position: center-top;
+
   
+
 }
 .container-calculator {
   border-color: black;
-  /* background-color: darkgrey; */
+  background-color: darkgrey;
   color: black;
-  border: black ;
+  border: 2px solid black ;
+
 }
 .selprotein-container {
 
@@ -41,6 +42,7 @@ code {
 
 #parent {
   display: flex;
+  background-image: url(//media.istockphoto.com/id/1296030180/photo/composition-with-high-protein-food.jpg?s=612x612&w=0&k=20&c=DJDYM9qte_Mz04jh-YsjQg6va8ht_PKbMV1yhndRdvs=)
 }
 #list2 {
   width: 600px;
@@ -57,3 +59,13 @@ code {
   background: lightgreen;
   /* Just so it's visible */
 }
+.color-change-red{
+background-color: red;
+
+
+}
+.color-change-green{
+  background-color: green;
+  
+  
+  }

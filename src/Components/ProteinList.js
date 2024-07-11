@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import ProteinItem from './ProteinItem';
 
-function ProteinList ({proteinList, onClickAdd, category, setProteinList}) {
+function ProteinList ({proteinList, onClickAdd, category, protein, filList, setProteinList}) {
    
    
     function addProtein(newProtein){
@@ -26,11 +26,12 @@ function ProteinList ({proteinList, onClickAdd, category, setProteinList}) {
         })
     
       }
-        
     
-    const originalList = proteinList.map((protein) => {
+    // setProteinList(filList)
+    const originalList = filList.map((protein) => 
+                                                {
 
-        return <ProteinItem onClickAdd={onClickAdd} categoryO={category} key={protein.id} name={protein.name} category={protein.category} serving={protein.serving} grams={protein.grams}/> 
+        return  <ProteinItem onClickAdd={onClickAdd} categoryO={category} key={protein.id} name={protein.name} category={protein.category} serving={protein.serving} grams={protein.grams}/> 
 })
     return(
 
