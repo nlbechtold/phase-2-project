@@ -1,10 +1,10 @@
 
 import React from "react";
-import { Button } from "react-bootstrap";
 
 
 
-function ProteinListFilter({proteinList,categoryO, setCategoryO}) {
+
+function ProteinListFilter({proteinList, setCategoryO}) {
 
     const uniqueCategory = [];
     proteinList.map(fil => {
@@ -14,7 +14,7 @@ function ProteinListFilter({proteinList,categoryO, setCategoryO}) {
     });
     uniqueCategory.push("All")
     const categoryList = uniqueCategory.map((cat) => {
-        return <button onClick = {() => {setCategoryO(cat)}}>{cat}</button>
+        return <button id="button-calc" onClick = {() => {setCategoryO(cat)}}>{cat}</button>
     });
     return(
 <div>
@@ -28,4 +28,3 @@ function ProteinListFilter({proteinList,categoryO, setCategoryO}) {
 
 }
 export default ProteinListFilter;
-

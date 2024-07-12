@@ -1,11 +1,9 @@
 
-import Badge from "react-bootstrap/Badge";
 import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import ProteinItem from './ProteinItem';
 
-function ProteinList ({proteinList, onClickAdd, category, protein, filList, setProteinList}) {
+function ProteinList ({proteinList, onClickAdd, category, filList, setProteinList}) {
    
    
     function addProtein(newProtein){
@@ -58,5 +56,3 @@ function ProteinList ({proteinList, onClickAdd, category, protein, filList, setP
 }
 
 export default ProteinList;
-
-

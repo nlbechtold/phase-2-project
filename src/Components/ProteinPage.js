@@ -4,17 +4,24 @@ import ProteinListFilter from "./ProteinListFilter";
 import ProteinList from "./ProteinList";
 import SelectedProteinList from "./SelectedProteinList";
 import { useState, useEffect } from "react";
-import React from "react";
+import React from 'react';
+import { useCalcContext } from './CalcContext';
+import { Image } from "react-bootstrap";
+import {Card} from "react-bootstrap";
 
 
-function ProteinPage({setCalcGrams, calcGrams}) {
-    const [isOpen, setIsOpen] = useState(false);
+
+
+function ProteinPage() {
+
+    const { calcGrams, setCalcGrams } = useCalcContext();
+
   const [selectedProteinItem, setSelectedProteinItem] = useState ("")
    const [selectedProteinList, setSelectedProteinList] = useState ([]);
     const [proteinList, setProteinList] = useState([]);
-    // const [cat, setCat] = useState("");
+ 
     const [categoryO, setCategoryO] = useState("All");
-
+// here is where I am manipulating and adding to the proteinList state
     useEffect(()=>{
         fetch('http://localhost:3001/foods')
         .then(r=>r.json())
@@ -43,7 +50,7 @@ function ProteinPage({setCalcGrams, calcGrams}) {
       
     
       }
-           
+        //    here is where I am using a function to push the new protein to the db.json
     function addingSelectedProtein(e) {
    
        
@@ -62,7 +69,7 @@ function ProteinPage({setCalcGrams, calcGrams}) {
 
     }
    
- 
+//  here is the logic for the filter buttons of state of proteinlist
 
       const newListFil = proteinList.filter((protein) => {
         if (categoryO === protein.category || categoryO === "All") {
@@ -76,21 +83,34 @@ function ProteinPage({setCalcGrams, calcGrams}) {
 
    
     return(
+        <><div>
+            <Image src="https://media.istockphoto.com/id/1296030180/photo/composition-with-high-protein-food.jpg?s=612x612&w=0&k=20&c=DJDYM9qte_Mz04jh-YsjQg6va8ht_PKbMV1yhndRdvs=" fluid />
+        </div> <Card id="parent">
+                    <Card>
+                <div id="list1">
+                <br></br>
+                    <h1> Protein Rich Foods </h1>
+                    <br></br>
+            {/* here are the components that make up the protein page and their props */}
 
-        <div id ="parent">
-       <div id = "list1">
-        <h1>Protein Manager</h1>
-        <ProteinListFilter filList={newListFil} setCategoryO= {setCategoryO}categoryO={categoryO} proteinList={proteinList}/>
-        {/* <ProteinListFilter newListFil = {newListFil} fil ={setCat} cat={protein.category} setCat={setCat} category={proteinList.category} categoryO={categoryO} setCategoryO={setCategoryO} setProteinList= {setProteinList} proteinList={proteinList}/> */}
-        <ProteinListForm addProtein={addProtein} category={proteinList.category} categoryO={categoryO} setCategoryO={setCategoryO} />
-        <ProteinList filList = {newListFil}  onClickAdd={addingSelectedProtein} categoryO={categoryO} foods={proteinList} proteinList={proteinList} category={proteinList.category} food={proteinList.name} serving={proteinList.serving} grams={proteinList.grams} />
-        </div>
-        <div id = "list2" >
-        <SelectedProteinList setCalcGrams = {setCalcGrams} calcGrams= {calcGrams} category={selectedProteinList.category} food={selectedProteinList.name} serving={selectedProteinList.serving} grams={selectedProteinList.grams} addingSelectedProtein={addingSelectedProtein} selectedProteinItem={selectedProteinItem} setSelectedProteinList={setSelectedProteinList} selectedProteinList={selectedProteinList}/>
-    
-        </div>
-
-      </div>
+                    <ProteinListFilter filList={newListFil} setCategoryO={setCategoryO} categoryO={categoryO} proteinList={proteinList}></ProteinListFilter>
+                    <br></br>
+                    <ProteinListForm addProtein={addProtein} category={proteinList.category} categoryO={categoryO} setCategoryO={setCategoryO} />
+                    <ProteinList filList={newListFil} onClickAdd={addingSelectedProtein} categoryO={categoryO} foods={proteinList} proteinList={proteinList} category={proteinList.category} food={proteinList.name} serving={proteinList.serving} grams={proteinList.grams} />
+                </div>
+                </Card>
+           
+            <></>
+            <Card>
+            <div id="list2">
+            <br></br>
+            <h1>Protein Picker</h1>
+           
+                <SelectedProteinList setCalcGrams={setCalcGrams} calcGrams={calcGrams} category={selectedProteinList.category} food={selectedProteinList.name} serving={selectedProteinList.serving} grams={selectedProteinList.grams} addingSelectedProtein={addingSelectedProtein} setSelectedProteinItem={setSelectedProteinItem} selectedProteinItem={selectedProteinItem} setSelectedProteinList={setSelectedProteinList} selectedProteinList={selectedProteinList} />
+                </div> </Card> </Card>
+        
+   
+      </> 
     );
   
 

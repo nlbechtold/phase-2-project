@@ -1,72 +1,46 @@
 import React from "react";
-import {Button, Container} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import Nav from 'react-bootstrap/Nav';
 import Accordion from 'react-bootstrap/Accordion';
 import Image from 'react-bootstrap/Image';
-import ProteinPage from "./ProteinPage";
-import Calculator from "./Calculator";
 import { useState } from "react";
-import SelectedProteinList from "./SelectedProteinList";
-import Collapse from "react-bootstrap/Collapse";
+import { Navbar } from "react-bootstrap";
 
 
 
 
-function Home ({setCalcGrams, calcGrams}) {
+function Home () {
     const [isOpen, setIsOpen] = useState(false);
-    const [weight, setWeight] = useState(0);
-    // const [calcGrams, setCalcGrams] = useState(0)
-
-
-
+ 
 
 return (
-    <Card className = "background"> 
+
+    <>
+<div className = "background">
+ <Image className="home-image" alt="pro" src="https://media.istockphoto.com/id/1299421162/photo/diet-and-exercise-for-weight-loss.jpg?s=612x612&w=0&k=20&c=t27MP4tiYbFKGdggpNV57CZZ9WfPD6ctzmyHZIto-F0="fluid />
+ </div>
+ <Container>
+      <Navbar id="button-calc" >
+        <Container>
        
-    <div>
-    <ProteinPage id = "parent" setCalcGrams = {setCalcGrams} calcGrams = {calcGrams} />
-        </div>
-    <div>
-    <Calculator setCalcGrams = {setCalcGrams} calcGrams = {calcGrams} />
-        </div>
-       
+        <Navbar.Brand href="/proteinPortal">Take me to the Protein Portal!</Navbar.Brand>
+        </Container>
+      </Navbar>
+    </Container>
 
-
-  <div>
-    <button onClick={() => setIsOpen(!isOpen)}>Toggle Dropdown</button>
-    {isOpen && (
-      <div>
-        <p>Option A</p>
-        <p>Option B</p>
-        <p>Option C</p>
-      </div>
-    )}
-  </div>
-
- <Image src="https://media.istockphoto.com/id/1296030180/photo/composition-with-high-protein-food.jpg?s=612x612&w=0&k=20&c=DJDYM9qte_Mz04jh-YsjQg6va8ht_PKbMV1yhndRdvs=" fluid />
-   
+        <Card className = "background"> 
       <Card.Header>
-        <Nav variant="tabs" defaultActiveKey="#first">
-          <Nav.Item>
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/calculator">Protein Calculator</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/proteinPage" >Protein Rich Foods </Nav.Link>
-          </Nav.Item>
-        </Nav>
       </Card.Header>
       <Card.Body>
-        <Card.Title>Why do we need protein?</Card.Title>
-        <Card.Text>
+        <br></br>
+        <br></br>
+        <h1>Why do we need protein?</h1>
+        <h3>
         Protein is a vital component of the human body that has many health benefits. It is beneficial for brain function, skin, hair and nails, and body composition.
-        </Card.Text>
+        </h3>
           <Accordion> 
       <Accordion.Item>
-      <Accordion.Header onClick={() => setIsOpen(!isOpen)}>Brain and Neurological Benefits</Accordion.Header>
+      <Accordion.Header  onClick={() => setIsOpen(!isOpen)}>Brain and Neurological Benefits</Accordion.Header>
         {isOpen && (
         <Accordion.Body>
         Proteins in our diet affect brain performance because they provide the amino acids (simply put, protein is made of amino acids) that make up our neurotransmitters. Think of neurotransmitters as biochemical messengers whose job it is to carry signals from one brain cell to another. These brain cells then transmit various signals to the different parts of the body to carry out their individual tasks. The better these messengers are fed, the more efficiently they deliver the goods.
@@ -114,6 +88,7 @@ Protein – amino acids – are also essential for our happiness.  When we don�
     </Accordion>
       </Card.Body>
     </Card>
+    </>
 
   );
 
@@ -122,6 +97,3 @@ Protein – amino acids – are also essential for our happiness.  When we don�
 
 export default Home;
 
-// onClick={()=>setOpen(!open)}
-
-// {open ? Accordion.Item  : Accordion.Body}

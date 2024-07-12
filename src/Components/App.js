@@ -1,32 +1,27 @@
-import React from "react";
-import Home from './Home'
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import ProteinPage from "./ProteinPage";
-import Calculator from "./Calculator";
-import {useState} from "react"
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import ProteinPortal from "./ProteinPortal";
 
+import { CalcProvider } from './CalcContext';
+import Calculator from './Calculator';
+import ProteinPage from './ProteinPage';
 
-function App() {
-  const [calcGrams, setCalcGrams] = useState(0)
-      return(
-    
-        <BrowserRouter> 
-            <Routes> 
-            <Route path="/" 
-            element={ <Home/>}/>
-                <Route path="/home" 
-                    element={<Home setCalcGrams={setCalcGrams} calcGrams={calcGrams}/>} /> 
-                <Route path="/calculator"
-                    element={<Calculator setCalcGrams={setCalcGrams} calcGrams={calcGrams} />} /> 
-                <Route path="/proteinPage"
-                    element={<ProteinPage setCalcGrams={setCalcGrams} calcGrams={calcGrams}/>} /> 
-            </Routes> 
-        </BrowserRouter> 
-        
+function App({calcGrams, setCalcGrams}) {
 
-      )
+// here are my 3 routes
+    return (
+      <Router>
+      <CalcProvider>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/proteinPortal" element={<ProteinPortal />} />
+            
+          </Routes>
+      </CalcProvider>
+  </Router>
+    );
 }
-
-
 
 export default App;

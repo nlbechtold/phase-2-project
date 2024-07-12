@@ -1,7 +1,7 @@
 import { Form, InputGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import React from "react";
-import ProteinList from "./ProteinList";
+
 
 
 
@@ -19,7 +19,7 @@ function ProteinListForm({addProtein,category,setCategoryO,categoryO}) {
     
     return (
         <div className = "ProteinListForm">
-            <h2>Protein Rich Foods</h2>
+          
         <Form
         onSubmit={(e) => {
             e.preventDefault();
@@ -36,6 +36,7 @@ function ProteinListForm({addProtein,category,setCategoryO,categoryO}) {
         
 
         }}>
+            <h3>Add your Own Protein</h3>
            <InputGroup className="mb-3">
              <Form.Select aria-label="Default select example" onChange= {handleChange}>
 
@@ -58,7 +59,7 @@ function ProteinListForm({addProtein,category,setCategoryO,categoryO}) {
             <br>
             </br>
              <div>
-            <Button type="submit">Add Protein Item</Button>
+            <Button id="button-calc" type="submit">Add Protein Item</Button>
             </div>
            
             </InputGroup>

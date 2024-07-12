@@ -9,9 +9,9 @@ return (
   
 
 <div>
-    <h1>
+    <h3>
  {category} {name} {serving} {grams}g
-</h1>
+</h3>
 <Badge bg="primary" category ={category} name={name} serving={serving} grams={grams} pill as={Button} onClick={(e) => {onRemove(category, name, serving, grams)}}>
           remove
         </Badge>

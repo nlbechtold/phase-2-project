@@ -132,7 +132,20 @@
       "category": "Plant",
       "grams": 17,
       "serving": "8 oz"
+    },
+    {
+      "id": "af2f",
+      "name": "Chia Seeds",
+      "serving": "2 tbsp",
+      "grams": "5",
+      "category": "Plant"
+    },
+    {
+      "id": "b14f",
+      "name": "Chia Seeds",
+      "serving": "2 tbsp",
+      "grams": "5",
+      "category": "Plant"
     }
-    
   ]
 }
